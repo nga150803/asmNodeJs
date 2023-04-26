@@ -1,0 +1,91 @@
+<!-- MAIN -->
+<main>
+    <div class="head-title">
+        <div class="left">
+            <h1>Bảng điều khiển</h1>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="#">Bảng điều khiển</a>
+                </li>
+                <li><i class='bx bx-chevron-right'></i></li>
+                <li>
+                    <a class="active" href="#">Home</a>
+                </li>
+            </ul>
+        </div>
+        <!-- <a href="#" class="btn-download">
+            <i class='bx bxs-cloud-download'></i>
+            <span class="text">Download PDF</span>
+        </a> -->
+    </div>
+
+    <ul class="box-info">
+        <li>
+            <i class='bx bxs-calendar-check'></i>
+            <span class="text">
+                <h3>1020</h3>
+                <p>Đơn hàng mới</p>
+            </span>
+        </li>
+        <li>
+            <i class='bx bxs-group'></i>
+            <span class="text">
+                <h3>2834</h3>
+                <p>Tài khoản</p>
+            </span>
+        </li>
+        <li>
+            <i class='bx bxs-dollar-circle'></i>
+            <span class="text">
+                <h3>$2543</h3>
+                <p>Tổng tiền</p>
+            </span>
+        </li>
+    </ul>
+
+
+    <div class="table-data">
+        <div class="order">
+            <div class="head">
+                <h3>Tất cả loại hàng trong Natully</h3>
+                <i class='bx bx-search'></i>
+                <i class='bx bx-filter'></i>
+            </div>
+            <a href="/addCategory"><button class="btn--add-product">Thêm loại hàng</button></a>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Tên loại hàng</th>
+                        <th>Thứ tự</th>
+                        <th>Vai trò</th>
+
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (let cate of listCategory ) {  %>
+                    <tr>
+                        <td><%= cate.id %> </td>
+                        <td><%= cate.name_category %></td>
+
+
+                        <td><%= cate.order %></td>
+                        <td><%= cate.role %></td>
+
+                        <td style=" display: flex; gap: 1rem;"><a href=" /editCate/<%= cate.id %>"><i
+                                    class='bx bxs-edit'></i></a><a href="/destroy/<%= cate.id %>"><i
+                                    class='bx bx-trash'></i></a>
+                        </td>
+
+                    </tr>
+                    <% } %>
+
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</main>
+</section>

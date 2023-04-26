@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../img/logoicon.png" />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css">
+
+    <title>Shop</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/shop.css">
+
+
+
+</head>
+
+<body>
+
+
+
+    <%- include('header') %>
+
+
+    <!-- shop start -->
+    <div class="store--container">
+        <div class="store--container--left">
+            <!-- phần title đầu -->
+            <div class="store--container--left-title">
+                <div class="store--container--left--title-left">
+                    <p>Hiển thị 1–12 trên 38 kết quả</p>
+                </div>
+                <div class="store--container--left--title-right">
+                    <li>
+                        <a href="#">Phân loại mặc định<ion-icon name="chevron-down-outline" class="menu-icon">
+                            </ion-icon>
+                        </a>
+                        <ul class="sub-menu">
+                            <li><a href="#">Giá: Thấp đến cao</a></li>
+                            <li><a href="#">Giá: Cao đến thấp</a></li>
+                        </ul>
+                    </li>
+                </div>
+
+
+            </div>
+            <!-- phần show sản phẩm -->
+            <div class="show--product--store" id="show">
+
+                <% for (let [index, products] of listProduct.entries()){%>
+                <div class="show--product--store--item">
+                    <a href="/detail_product/<%=products.id%>">
+                        <div class="show--product--store--item--image">
+                            <img src="../<%=products.img%>" alt=" ${item.name}" />
+                        </div>
+                        <div class="show--product--store--item--des">
+                            <h2><%=products.name_product%></h2>
+                            <p class="price">
+                                <%=products.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })%></p>
+                            <a href="/cart" class="add-to-cart">
+                                <ion-icon name="cart-outline"></ion-icon>
+                            </a>
+
+                        </div>
+                        <div id="new">Sale</div>
+                    </a>
+
+                </div>
+                <% } %>
+            </div>
+
+            <!-- //phần phân trang -->
+            <nav class="woocommerce-pagination">
+                <% if (currentPage && currentPage > 1) { %>
+                <a class="page-numbers" href="?page=1">&laquo;</a>
+                <a class="page-numbers" href="?page=<%=currentPage-1%>">&lt;</a>
+                <% } %>
+
+                <% for (let i=1; i<=totalPages; i++) { %>
+                <% if (i === currentPage) { %>
+                <span aria-current="page" class="page-numbers current"><%=i%></span>
+                <% } else { %>
+                <a class="page-numbers" href="?page=<%=i%>"><%=i%></a>
+                <% } %>
+                <% } %>
+
+                <% if (currentPage < totalPages) { %>
+                <a class="page-numbers" href="?page=<%=currentPage+1%>">&gt;</a>
+                <a class="page-numbers" href="?page=<%=totalPages%>">&raquo;</a>
+                <% } %>
+            </nav>
+
+
+
+        </div>
+        <div class="store--container--right">
+            <!-- //phần search product -->
+            <div class="search--product">
+                <h3>Tìm kiếm sản phẩm</h3>
+                <div class="search-input">
+                    <input type="text" placeholder="Nhập tên sản phẩm....">
+                    <ion-icon name="search-outline"></ion-icon>
+                </div>
+            </div>
+            <!-- phần price -->
+            <div class="filter">
+                <h3>Giá</h3>
+                <label>
+
+                    <input type="range" class="range-min" min="1" max="100" value="50">
+                    <p>Giá: $20 — $40</p>
+                </label>
+            </div>
+            <!-- //phần category -->
+            <div class="category--store">
+                <h3>Loại hàng</h3>
+                <ul>
+                    <% for ( let category of listCategory) { %>
+                    <li><a href="/shop/<%=category.id%>"><%=category.name_category%></a><span>(6)</span></li>
+
+                    <% } %>
+                </ul>
+            </div>
+
+
+            <!-- //phần instagram -->
+            <div class="flower--store--container">
+                <h2>Instagram</h2>
+                <div class="flower--store">
+
+                    <div class="flower--store-box">
+                        <img src="../img/product/product1.jpg" alt="${item.name}" />
+                        <a href="">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </a>
+                    </div>
+                    <div class="flower--store-box">
+                        <img src="../img/product/product2.jpg" alt="${item.name}" />
+                        <a href="">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </a>
+                    </div>
+                    <div class="flower--store-box">
+                        <img src="../img/product/product1.jpg" alt="${item.name}" />
+                        <a href="">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="flower--store">
+
+
+                    <div class="flower--store-box">
+                        <img src="../img/product/product2.jpg" alt="${item.name}" />
+                        <a href="">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </a>
+                    </div>
+                    <div class="flower--store-box">
+                        <img src="../img/product/product3.jpg" alt="${item.name}" />
+                        <a href="">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </a>
+                    </div>
+                    <div class="flower--store-box">
+                        <img src="../img/product/product4.jpg" alt="${item.name}" />
+                        <a href="">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </a>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- phần flower us -->
+            <div class="follow">
+                <h3>Theo dõi chúng tôi</h3>
+                <div class="flower--us">
+                    <li class="flower--us--icon-container">
+                        <a href="">
+                            <ion-icon class="flower--us--icon" name="logo-facebook"></ion-icon>
+                        </a>
+                        <a href="">
+                            <ion-icon class="flower--us--icon" name="logo-instagram"></ion-icon>
+                        </a>
+                        <a href="">
+                            <ion-icon class="flower--us--icon" name="logo-tiktok"></ion-icon>
+                        </a>
+                        <a href="">
+                            <ion-icon class="flower--us--icon" name="chatbubbles-outline"></ion-icon>
+                        </a>
+                    </li>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <%- include('footer') %>
+
+
+
+
+    <!-- ---- ICON -----------  -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="../js/script.js"></script>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="icon" type="image/png" href="./ascess/img/logoicon.png" /> -->
+
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- My CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/admin.css">
+
+    <title>Admin-Natully</title>
+</head>
+
+<body>
+
+
+    <%- include('headerAdmin') %>
+
+
+
+    <!-- MAIN -->
+    <main>
+        <div class="head-title">
+            <div class="left">
+                <h1>Bảng điều khiển</h1>
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="/admin">Bảng điều khiển</a>
+                    </li>
+                    <li><i class='bx bx-chevron-right'></i></li>
+                    <li>
+                        <a class="active" href="/shopAdmin">Thêm sản phẩm</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- <a href="#" class="btn-download">
+            <i class='bx bxs-cloud-download'></i>
+            <span class="text">Download PDF</span>
+        </a> -->
+        </div>
+        <div class="add--product">
+            <form class="col-6  rounded p-3 m-auto" action="/admin/" method="POST">
+                <h1>Thêm sản phẩm</h1>
+
+                <div class="form--add-product">
+                    <label for="name_category">Tên loại hàng</label>
+                    <input class="form-control " name="name_category" id="name_category">
+                </div>
+
+                <div class="form--add-product">
+                    <label for="order">Thứ tự</label>
+                    <input class="form-control " name="order" id="order">
+                </div>
+                <div class="form--add-product">
+                    <label for="role">Vai trò</label>
+                    <input class="form-control " name="role" id="role">
+                </div>
+
+                <div class="form--add-product">
+                    <button type="submit" class="btn--add-product--"> Thêm loại hàng</button>
+                </div>
+            </form>
+        </div>
+
+
+
+
+
+    </main>
+    <!-- MAIN -->
+    </section>
+    <!-- MAIN -->
+    <!-- CONTENT -->
+
+
+    <script>
+        const allSideMenu = document.querySelectorAll('#sidebar_admin .side-menu.top li a');
+
+        allSideMenu.forEach(item => {
+            const li = item.parentElement;
+
+            item.addEventListener('click', function () {
+                allSideMenu.forEach(i => {
+                    i.parentElement.classList.remove('active');
+                })
+                li.classList.add('active');
+            })
+        });
+
+
+
+
+        // TOGGLE SIDEBAR
+        const menuBar = document.querySelector('#content nav .bx.bx-menu');
+        const sidebar_admin = document.getElementById('sidebar_admin');
+
+        menuBar.addEventListener('click', function () {
+            sidebar_admin.classList.toggle('hide');
+        })
+
+
+
+
+
+
+
+        const searchButton = document.querySelector('#content nav form .form-input button');
+        const searchButtonIcon = document.querySelector('#content nav form .form-input button .bx');
+        const searchForm = document.querySelector('#content nav form');
+
+        searchButton.addEventListener('click', function (e) {
+            if (window.innerWidth < 576) {
+                e.preventDefault();
+                searchForm.classList.toggle('show');
+                if (searchForm.classList.contains('show')) {
+                    searchButtonIcon.classList.replace('bx-search', 'bx-x');
+                } else {
+                    searchButtonIcon.classList.replace('bx-x', 'bx-search');
+                }
+            }
+        })
+
+
+
+
+
+        if (window.innerWidth < 768) {
+            sidebar_admin.classList.add('hide');
+        } else if (window.innerWidth > 576) {
+            searchButtonIcon.classList.replace('bx-x', 'bx-search');
+            searchForm.classList.remove('show');
+        }
+
+
+        window.addEventListener('resize', function () {
+            if (this.innerWidth > 576) {
+                searchButtonIcon.classList.replace('bx-x', 'bx-search');
+                searchForm.classList.remove('show');
+            }
+        })
+
+
+
+        const switchMode = document.getElementById('switch-mode');
+
+        switchMode.addEventListener('change', function () {
+            if (this.checked) {
+                document.body.classList.add('dark');
+            } else {
+                document.body.classList.remove('dark');
+            }
+        })
+    </script>
+</body>
+
+</html>

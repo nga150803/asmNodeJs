@@ -1,0 +1,37 @@
+:root {
+  --color_container: #0c5b47;
+  --color_secondary: #fef1e6;
+  --color_footer: #e7f0e4;
+  --bg-color: #222327;
+  --text-color: #353030;
+
+  --main-color: #0c5b47;
+}
+header {
+  background: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.meInfor--shop {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #79b19f, #e3bfa0);
+}
+.meInfor--shop--container {
+  margin-top: 130px;
+  margin-bottom: 70px;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 50px;
+
+  width: 40%;
+  height: 300px;
+  border: 1px solid #ccc;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 0.5rem;
+}
+.meInfor--shop--container p,
+.meInfor--shop--container h1 {
+  padding: 10px;
+  text-align: center;
+}

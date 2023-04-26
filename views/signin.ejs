@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../img/logoicon.png" />
+
+    <title>Sign In-Natully</title>
+    <link rel="stylesheet" type="text/css" href="/css/login.css">
+
+</head>
+
+<body>
+    <div class="login-card-container">
+        <div class="login-card">
+            <div class="login-card-logo">
+
+                <a href="/"><img src="../img/logo.png" alt="logo"></a>
+            </div>
+            <div class="login-card-header">
+                <h1>Đăng ký tài khoản</h1>
+                <div>Vui lòng nhập thông tin để đăng ký tài khoản!!</div>
+            </div>
+            <form action="/signin" method="POST" class="login-card-form" id="login-card-form">
+                <div class="form-item">
+                    <ion-icon class="form-item-icon" name="person-outline"></ion-icon>
+                    <!-- //sử dụng thuộc tính oninvalid của thẻ <input> để hiển thị thông báo lỗi khi người dùng nhập sai dữ liệu và sử dụng thuộc tính oninput để xóa thông báo đó đi: -->
+                    <input type="email" name="email" placeholder="Nhập Email..."
+                        oninvalid="this.setCustomValidity('Email đã được đăng ký trước đó.')"
+                        oninput="this.setCustomValidity('')" required autofocus>
+
+                </div>
+                <div class="form-item">
+                    <ion-icon class="form-item-icon" name="mail-outline"></ion-icon>
+                    <input type="text" placeholder="Nhập tài khoản..." name="username" required autofocus>
+                </div>
+                <div class="form-item">
+                    <ion-icon class="form-item-icon" name="bag-outline"></ion-icon>
+                    <input type="password" name="password" placeholder="Nhập mật khẩu..." required>
+                </div>
+
+                <button type="submit"> Đăng ký</button>
+
+            </form>
+            <div class="login-card-footer">
+                Bạn đã có tài khoản?<a href="/login">Đăng nhập</a>
+            </div>
+        </div>
+        <!-- <div class="login-card-social">
+            <div>Other Sign-in Platform</div>
+        </div> -->
+    </div>
+    <!-- ---- ICON -----------  -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

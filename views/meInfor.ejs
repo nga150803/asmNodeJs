@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../img/logoicon.png" />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css">
+
+    <title>Contact-Natully</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/meInfor.css">
+
+
+
+</head>
+
+<body>
+
+
+
+    <%- include('header') %>
+
+    <!--  -->
+    <!-- phần thông tin cá nhân -->
+    <div class="meInfor--shop">
+        <div class="meInfor--shop--container">
+            <h1>Thông tin cá nhân</h1>
+            <p id="email"></p>
+            <p id="username"></p>
+        </div>
+
+    </div>
+
+
+
+
+    <%- include('footer') %>
+
+
+
+
+    <!-- ---- ICON -----------  -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="../js/script.js"></script>
+
+    <script>
+        const name = document.getElementById("email");
+        const username = document.getElementById("username");
+
+        const local = JSON.parse(localStorage.getItem('account'));
+        console.log(local[0]);
+        name.innerHTML = `Email: ${local[0].email}`;
+        username.innerHTML = `Username: ${local[0].username}`;
+    </script>
+    <!-- <script>
+        const account = JSON.parse(localStorage.getItem('account'));
+        const main = document.querySelector('.meInfor--shop');
+        console.log(account[0].username);
+        if (!account) {
+            console.log('jk');
+        } else {
+            main.innerHTML = `
+        <p>Email:${account[0].email}</p>
+        <p>Username:${account[0].username}</p>
+        <p>Password:${account[0].password}</p>
+        `;
+        }
+    </script> -->
+
+</body>
+
+
+</html>

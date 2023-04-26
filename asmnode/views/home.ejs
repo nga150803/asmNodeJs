@@ -1,0 +1,203 @@
+<!-- <h2>Terrible gift</h2> -->
+</div>
+<!-- <p class="transport--box-content">There are always great promotions on holidays</p> -->
+</div>
+<!-- //banner start -->
+<section>
+    <!-- Thẻ Chứa Slideshow -->
+    <div class="slideshow-container">
+        <!-- Kết hợp hình ảnh và nội dung cho mội phần tử trong slideshow-->
+        <div class="mySlides fade">
+            <img class="img_banner" src="../img/banner/banner1.jpg">
+            <!-- <div class="text">Nội Dung 1</div> -->
+        </div>
+        <div class="mySlides fade">
+            <img class="img_banner" src="../img/banner/banner2.jpg">
+            <!-- <div class="text">Nội Dung 2</div> -->
+        </div>
+        <div class="mySlides fade">
+            <img class="img_banner" src="../img/banner/banner3.jpg">
+            <!-- <div class="text">Nội Dung 3</div> -->
+        </div>
+        <!-- Nút điều khiển mũi tên-->
+        <a class="prev" onclick="plusSlides(-1)">❮❮</a>
+        <a class="next" onclick="plusSlides(1)">❯❯</a>
+    </div>
+    <br>
+    <!-- Nút tròn điều khiển slideshow-->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+</section>
+
+
+
+<div class="content--home">
+    <p>Người bán hoa, Natully</p>
+
+    <h1>Sản phẩm tại Natully </h1>
+</div>
+
+
+<div class="show--product" id="show">
+
+    <% for (let [index, products] of listProduct.entries()){%>
+    <div class="show--product--item">
+        <a href="/detail_product/<%=products.id%>">
+            <div class="show--product--item--image">
+                <img src="../<%=products.img%>"" alt=" ${item.name}" />
+            </div>
+            <div class="show--product--item--des">
+                <h2><%=products.name_product%></h2>
+                <p class="price"><%=products.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })%></p>
+                <a href="/add-to-cart?product_id=<%=products.id %>" class="add-to-cart">
+                    <ion-icon name="cart-outline"></ion-icon>
+                </a>
+
+            </div>
+            <div id="new">Sale</div>
+        </a>
+
+    </div>
+    <% } %>
+</div>
+<!-- phần phân trang  -->
+<!--  -->
+<nav class="woocommerce-pagination">
+    <span aria-current="page" class="page-numbers current">1</span>
+    <a class="page-numbers" href="">2</a>
+    <a class="page-numbers" href="">3</a>
+    <a class="page-numbers" href="">4</a>
+    <a class="page-numbers" href="">❯</a>
+</nav>
+
+<div class="content--home">
+    <p>Người bán hoa, Natully</p>
+
+    <h1>Sản phẩm nổi bật tại Natully </h1>
+</div>
+
+
+<div class="show--product" id="show">
+
+    <% for (let [index, products] of listSPHot.entries()){%>
+    <div class="show--product--item">
+        <a href="/detail_product/<%=products.id%>">
+            <div class="show--product--item--image">
+                <img src="../<%=products.img%>"" alt=" ${item.name}" />
+            </div>
+            <div class="show--product--item--des">
+                <h2><%=products.name_product%></h2>
+                <p class="price"><%=products.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })%></p>
+                <a href="/add-to-cart?product_id=<%=products.id %>" class="add-to-cart">
+                    <ion-icon name="cart-outline"></ion-icon>
+                </a>
+
+            </div>
+            <div id="new">Sale</div>
+        </a>
+
+    </div>
+    <% } %>
+</div>
+
+
+
+<div class="content--home">
+    <p>Người bán hoa, Natully</p>
+
+    <h1>Ý tưởng từ Natully </h1>
+</div>
+
+
+<!-- //phần video hoa -->
+<div class="banner--content-home">
+    <div class="banner--home">
+        <!-- <a class="video-button" href="#video">VIDEO</a> -->
+        <div class="banner--home--video" id="frameVideo">
+            <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/4x7W6FutvnM"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe> -->
+            <img src="../img/banner/banner_Video.jpg" alt="">
+            <button class="video-button" id="clip">VIDEO</button>
+        </div>
+    </div>
+</div>
+<!-- //phần vận chuyển -->
+<div class="content--home">
+    <p>Người bán hoa, Natully</p>
+
+
+    <h1>Natully luôn đồng hành cùng bạn </h1>
+</div>
+
+<div class="transport">
+    <div class="transport--box">
+        <div class="transport--box-title">
+            <ion-icon name="call-outline"></ion-icon>
+            <h2>Tư vấn trực tuyến</h2>
+        </div>
+        <p class="transport--box-content">Tư vấn nhiệt tình mọi trường hợp của khách hàng</p>
+    </div>
+    <div class="transport--box">
+        <div class="transport--box-title">
+            <ion-icon name="leaf-outline"></ion-icon>
+            <h2>
+                Độ tươi 100% </h2>
+        </div>
+        <p class="transport--box-content">100% sản phẩm được đảm bảo về chất lượng
+        </p>
+    </div>
+    <div class="transport--box">
+        <div class="transport--box-title">
+            <ion-icon name="calendar-number-outline"></ion-icon>
+            <h2>Giao hàng </h2>
+        </div>
+        <p class="transport--box-content">Sản phẩm sẽ được giao đúng hẹn cho khách hàng</p>
+    </div>
+    <div class="transport--box">
+        <div class="transport--box-title">
+            <ion-icon name="gift-outline"></ion-icon>
+            <h2>Qùa tặng khủng</h2>
+        </div>
+        <p class="transport--box-content">Luôn có các chương trình khuyến mãi lớn vào các dịp lễ</p>
+    </div>
+
+
+</div>
+<!-- //phần flower -->
+<div class="flower--shop--container">
+    <h2>Theo dõi chúng tôi</h2>
+    <div class="flower--shop">
+
+        <div class="flower--shop-box">
+            <img src="../img/product/product1.jpg" alt="${item.name}" />
+            <a href="">
+                <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+        </div>
+        <div class="flower--shop-box">
+            <img src="../img/product/product2.jpg" alt="${item.name}" />
+            <a href="">
+                <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+        </div>
+        <div class="flower--shop-box">
+            <img src="../img/product/product3.jpg" alt="${item.name}" />
+            <a href="">
+                <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+        </div>
+        <div class="flower--shop-box">
+            <img src="../img/product/product4.jpg" alt="${item.name}" />
+            <a href="">
+                <ion-icon name="chatbubbles-outline"></ion-icon>
+            </a>
+        </div>
+
+
+    </div>
+</div>

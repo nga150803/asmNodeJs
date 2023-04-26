@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../img/logoicon.png" />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css">
+
+    <title>Cart-Natully</title>
+    <link rel="stylesheet" type="text/css" href="/css/cart.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+
+
+</head>
+
+<body>
+
+
+
+    <%- include('header') %>
+
+
+
+    <!-- //cart -->
+    <div class="cart--views">
+        <div class="table-data-views">
+            <div class="order">
+                <div class="head">
+                    <h3>Cart</h3>
+
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name Product</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Operation</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td><img src="../img/product/product1.jpg">Moronto Florist</td>
+
+                            <td>$50</td>
+                            <td>70</td>
+                            <td>
+                                <ion-icon name="trash-outline"></ion-icon>
+                            </td>
+
+                        </tr>
+
+                        <tr>
+                            <td><img src="../img/product/product1.jpg">Moronto Florist</td>
+
+                            <td>$50</td>
+                            <td>70</td>
+                            <td>
+                                <ion-icon name="trash-outline"></ion-icon>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td><img src="../img/product/product1.jpg">Moronto Florist</td>
+
+                            <td>$50</td>
+                            <td>70</td>
+                            <td>
+                                <ion-icon name="trash-outline"></ion-icon>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+                <div class="total--container">
+                    <span class="total">Tổng tiền : $78</span>
+                    <a href="">
+                        <button class="total--btn">Thanh toán</button>
+                    </a>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- cart end -->
+
+    <%- include('footer') %>
+
+
+
+
+    <!-- ---- ICON -----------  -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="../js/script.js"></script>
+
+
+</body>
+
+
+</html>

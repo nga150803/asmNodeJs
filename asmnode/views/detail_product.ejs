@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../img/logoicon.png" />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css">
+
+    <title>Cửa hàng</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/detail_product.css">
+
+
+
+    <!-- <link rel="stylesheet" href="../public/css/style.css"> -->
+</head>
+
+<body>
+
+
+
+    <%- include('header') %>
+
+    <!-- detail products start -->
+
+    <div class="detail--product">
+        <div class="detail--product--left">
+            <img src="../<%=products.img%>" title="" />
+        </div>
+        <div class="detail--product--right">
+            <h1 class="detail--product--right-title"><%=products.name_product%></h1>
+
+
+            <h3 class="detail--product--right-price">
+                <%=products.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })%> <span>
+                    <%=products.price_sale.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })%></span></h3>
+
+            <p><%=products.description%></p>
+            <br>
+            <div class="detail--product--right-container">
+                <input class="detail--product--right-input" type="number" name="quantity" min="1" max="10"
+                    placeholder="1">
+                <a href="/cart"><button class="detail--product--right-btn">
+                        Thêm vào giỏ
+
+                    </button></a>
+            </div>
+
+            <hr>
+            <br>
+
+            <p>Views: <%=products.views%></p>
+            <p>Loại hàng: Hoa hồng</p>
+            <p>Tags: tươi tốt, theo mùa, kết cấu</p>
+
+        </div>
+
+    </div>
+    <!-- detail products end -->
+    <!-- sản phẩm tương tự
+-->
+    <div class="content--home">
+        <p>Sản phẩn tương tự tại Natully</p>
+
+        <h1>Các sản phẩm khác bạn có thể chọn</h1>
+
+    </div>
+    <div class="show--product" id="show">
+        <div class="show--product--item">
+            <a href="./detail_product.html">
+                <div class="show--product--item--image">
+                    <img src="../img/product/product1.jpg" alt="${item.name}" />
+                </div>
+                <div class="show--product--item--des">
+                    <h2>Moronto Florist</h2>
+                    <p class="price">$50</p>
+                    <a href="./cart.html" class="add-to-cart">
+                        <ion-icon name="cart-outline"></ion-icon>
+                    </a>
+
+                </div>
+                <div id="new">Sale</div>
+            </a>
+
+        </div>
+        <div class="show--product--item">
+            <a href="./detail_product.html">
+                <div class="show--product--item--image">
+                    <img src="../img/product/product2.jpg" alt="${item.name}" />
+                </div>
+                <div class="show--product--item--des">
+                    <h2>Moronto Florist</h2>
+                    <p class="price">$50</p>
+                    <a href="./cart.html" class="add-to-cart">
+                        <ion-icon name="cart-outline"></ion-icon>
+                    </a>
+
+                </div>
+                <div id="new">Sale</div>
+            </a>
+
+        </div>
+        <div class="show--product--item">
+            <a href="./detail_product.html">
+                <div class="show--product--item--image">
+                    <img src="../img/product/product3.jpg" alt="${item.name}" />
+                </div>
+                <div class="show--product--item--des">
+                    <h2>Moronto Florist</h2>
+                    <p class="price">$50</p>
+                    <a href="./cart.html" class="add-to-cart">
+                        <ion-icon name="cart-outline"></ion-icon>
+                    </a>
+
+                </div>
+                <div id="new">Sale</div>
+            </a>
+
+        </div>
+        <div class="show--product--item">
+            <a href="./detail_product.html">
+
+                <div class="show--product--item--image">
+                    <img src="../img/product/product4.jpg" alt="${item.name}" />
+                </div>
+                <div class="show--product--item--des">
+                    <h2>Moronto Florist</h2>
+                    <p class="price">$50</p>
+                    <a href="./cart.html" class="add-to-cart">
+                        <ion-icon name="cart-outline"></ion-icon>
+                    </a>
+                </div>
+                <div id="new">Sale</div>
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <%- include('footer') %>
+
+
+
+
+    <!-- ---- ICON -----------  -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="../js/script.js"></script>
+
+
+</body>
+
+
+</html>
